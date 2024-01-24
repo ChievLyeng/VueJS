@@ -12,7 +12,7 @@
 
 // buttonEl.addEventListener('click', addGoal);
 
-Vue.createApp({
+const app = Vue.createApp({
     data() {
       return {
         goals: [],
