@@ -19,15 +19,16 @@
     <section id="events">
       <h2>Events in Action</h2>
       <button v-on:click="add(10)">Add 10</button>
-      <button v-on:click.right="reduce(5)">Reduce 5</button>
+      <button @click.right="reduce(5)">Reduce 5</button>
       <p v-once>Starting Counter : {{counter}}</p>
       <p>Result: {{ counter }}</p>
 
       <!-- the short cut of the below code -->
       <!-- call two binding way -->
       <input type="text" v-model="name">
+      <input type="text" v-model="lastName">
       <button v-on:click="resetInput"> Reset</button>
-      <p>Your Name : {{name}}</p>
+      <p>Your Name : {{fullname}}</p>
       <!-- <input 
         type="text"
         v-bind:value="name"
