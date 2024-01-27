@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" v-model="enteredGoal" />
+      <button @click="addGoal">Add Goal</button>
+      <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
+      <p v-else>There are {{goals.length}} words </p>
+      <!-- <ul v-else-if="goals.length > 0 && goals.length < 3">
+        <li>V else If</li>
+      </ul> -->
+      <ul v-if="goals.length > 0">
+        <li 
+          v-for="(goal,index) in goals"
+          @click="removeGoal(index)"
+          :key="goal"
+          >
+          {{index + 1}} - {{goal}}
+          <input type="text" @click.stop>
+        </li>
+      </ul>
+
+      <!-- loop through number -->
+      <!-- <ul>
+        <li v-for="num in 10">
+          {{num}}
+        </li>
+      </ul> -->
+
+      <!-- loop through object -->
+      <!-- <ul>
+        <li v-for="(value,key) in obj"> {{key}} : {{value}}</li>
+      </ul> -->
+    </section>
+  </body>
+</html>
